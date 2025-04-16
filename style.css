@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+h2 {
+  text-align: center;
+  margin-top: 10px;
+}
+ul#book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 0;
+  list-style: none;
+}
+.book {
+  margin: 0 auto;
+}
+.bookCard {
+  width: 300px;
+  height: 350px;
+  background: linear-gradient(
+    to right,
+    #fdf6e3 10%,
+    #f5deb3 10%,
+    #f5deb3 90%,
+    #fdf6e3 90%
+  );
+  border: 2px solid #d2b48c;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  position: relative;
+  z-index: 1; /* Ensure text appears above pseudo-element */
+}
+.bookCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 5px;
+  height: 100%;
+  background-color: #d2b48c;
+  z-index: 0; /* Ensure pseudo-element is behind text */
+}
+#addNewBook {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #888888;
+  border: none;
+  border-radius: 10px;
+}
+#addNewBook:hover {
+  background-color: #555555;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+#bookForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.delete-book {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.toggle-status {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
